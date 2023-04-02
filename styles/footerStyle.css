@@ -1,0 +1,61 @@
+.wp-block-social-link-anchor {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wp-block-social-link-anchor:hover span {
+  color: #0028ff;
+}
+.wp-block-social-link-anchor svg,
+.wp-block-social-link-anchor span {
+  transition: all 0.2s ease-in;
+  color: #8d8d8d;
+  fill: #8d8d8d;
+}
+.wp-block-social-link-anchor:hover svg {
+  fill: #0028ff;
+}
+/* .wp-block-social-link-anchor .screen-reader-text {
+  display: none;
+} */
+.wp-block-columns {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.is-layout-flow {
+  flex: 1;
+}
+.widget_block {
+  margin-block: 1rem;
+}
+.wp-block-heading {
+  line-height: 60px;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.wp-block-column ul li {
+  padding: 5px;
+  margin-bottom: 5px;
+  transition: all 0.2s ease-in;
+}
+.wp-block-column ul li a::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: #0028ff;
+  display: inline-block;
+  transition: all 0.1s ease-in;
+  border-radius: 5px;
+  margin-bottom: 1px;
+}
+.wp-block-column ul li a:hover {
+  color: #0028ff;
+}
+.wp-block-column ul li a:hover::before {
+  width: 10px;
+  margin-left: 5px;
+}
