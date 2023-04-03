@@ -1,4 +1,5 @@
 
+import {  props } from 'dummy';
 import React from 'react'
 import { PageWrapper } from 'src/context/page';
 import BackToTop from '../BackToTop/BackToTop';
@@ -6,7 +7,7 @@ import { BlockRenderer } from '../BlockRenderer';
 import Footer from '../Footer/Footer';
 import MainMenu from '../MainMenu/MainMenu';
 
-const Page = (props) => {
+const Page = () => {
     return (
         <PageWrapper value={{ title: props.title, featuredImage: props.featuredImage, latestComments: props?.latestComments || null }}>
             <BackToTop />
