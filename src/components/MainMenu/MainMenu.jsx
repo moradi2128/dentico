@@ -3,7 +3,7 @@ import Link from 'next/link'
 // import ButtonLink from '../ButtonLink/ButtonLink'
 // import { Bars4Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/solid'
 // import SocialMedia from '../SocialMedia/SocialMedia'
-
+import { v4 as uuid } from "uuid"
 import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
@@ -13,21 +13,26 @@ import {
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import IocnButton from 'src/subComponents/IocnButton/IocnButton'
 import Logo from '../Logo/Logo'
+import { useRouter } from 'next/router'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 const MainMenu = (props) => {
+    const router = useRouter()
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [showPopover, setShowPopover] = useState(false);
-    const { mainMenu,
+    let { mainMenu,
         logo,
         callToActionLabel,
         callToActionDestination } = props;
-    const renderLink = (label, destination = null) => {
+
+    const renderLink = (label, destination = null, callback = null) => {
         if (destination) {
             return <Link href={destination}>
-                <a className="block text-lg text-gray-400 hover:text-secondary transition-all p-4">
+                <a className={`block text-lg text-gray-400 hover:text-secondary transition-all p-4 ${(router?.pathname === "/" ? router?.pathname : (router?.pathname + "/")) == destination ? "text-secondary" : ""}`}
+                    onClick={() => typeof callback === "function" && callback()}
+                >
                     {label}
                 </a>
             </Link>
@@ -168,7 +173,7 @@ const MainMenu = (props) => {
                                         </Disclosure>
                                     }
                                     return <Fragment key={menuItem.id}>
-                                        {renderLink(menuItem.label, menuItem.destination)}
+                                        {renderLink(menuItem.label, menuItem.destination, () => setMobileMenuOpen(false))}
                                     </Fragment>
                                 })}
                             </div>
@@ -181,4 +186,3 @@ const MainMenu = (props) => {
 }
 
 export default MainMenu
-

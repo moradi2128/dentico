@@ -25,7 +25,7 @@ const CardItemVertical = ({ contentCard, descColor, contentAlign }) => {
                     <CallToActionButton
                         buttonLabel={btnLabal}
                         destination={btnUrl}
-                        align={btnAlign}
+                        align="center"
                         className="w-full"
                     />
                 </div>

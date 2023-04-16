@@ -22,11 +22,11 @@ const BackToTop = () => {
         const handleScroll = () => {
             const scrollToTopButton = document.querySelector('[data-backToTopButton]');
             if (isScrollingDown() || window.pageYOffset == 0) {
-                scrollToTopButton.classList.add('opacity-0', 'invisible');
-                scrollToTopButton.classList.remove('opacity-100', 'visible');
+                scrollToTopButton?.classList.add('opacity-0', 'invisible');
+                scrollToTopButton?.classList.remove('opacity-100', 'visible');
             } else {
-                scrollToTopButton.classList.remove('opacity-0', 'invisible');
-                scrollToTopButton.classList.add('opacity-100', 'visible');
+                scrollToTopButton?.classList.remove('opacity-0', 'invisible');
+                scrollToTopButton?.classList.add('opacity-100', 'visible');
             }
         };
 
