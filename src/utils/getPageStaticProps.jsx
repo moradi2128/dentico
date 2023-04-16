@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client"
 import client from "client"
 import { cleanAndTransformBlocks } from "./cleanAndTransformBlocks"
-import { mainMaenuItems } from "./mapMainMenuItems"
+
 
 export const getPageStaticProps = async (context) => {
   const uri = context.params?.slug ? `/${context.params.slug.join("/")}/` : "/"
@@ -39,63 +39,7 @@ export const getPageStaticProps = async (context) => {
               }
             }
           }
-          ... on Property {
-            id
-            title
-            blocksJSON
-            featuredImage {
-              node {
-                sourceUrl
-              }
-            }
-          }
-        }
-        getFooter {
-          sidebarOne
-          sidebarTwo
-          copyrightText
-          socialLinks {
-            iconName
-            iconUrl
-          }
-        }
-  acfOptionsMainMenu {
-    logo {
-      logo {
-        sourceUrl
-      }
-    }
-    mainMenu {
-      callToActionButton {
-        destination {
-          ... on Page {
-            id
-            uri
-          }
-        }
-        label
-      }
-      menuItems {
-        items {
-          destination {
-            ... on Page {
-              uri
-            }
-          }
-          label
-        }
-        menuItems {
-          destination {
-            ... on Page {
-              uri
-            }
-          }
-          label
-        }
-      }
-    }
-  }
-  
+        }  
       }
       `,
     variables: { uri }
@@ -103,14 +47,9 @@ export const getPageStaticProps = async (context) => {
   return {
     props: {
       title: data.nodeByUri.title,
-      latestComments:data.nodeByUri?.comments?.nodes || null,
-      logo: data.acfOptionsMainMenu.logo.logo.sourceUrl || null,
+      blocks: await cleanAndTransformBlocks(data.nodeByUri.blocksJSON),
+      latestComments: data.nodeByUri?.comments?.nodes || null,
       featuredImage: data.nodeByUri?.featuredImage?.node?.sourceUrl || null,
-      mainMenuItems: mainMaenuItems(data.acfOptionsMainMenu.mainMenu.menuItems),
-      footer:data.getFooter,
-      callToActionLabel: data.acfOptionsMainMenu.mainMenu.callToActionButton.label,
-      callToActionDestination: data.acfOptionsMainMenu.mainMenu.callToActionButton.destinatio?.uri || null,
-      blocks: await cleanAndTransformBlocks(data.nodeByUri.blocksJSON)
     }
   }
 }

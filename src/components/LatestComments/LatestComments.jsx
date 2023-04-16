@@ -12,19 +12,21 @@ import "swiper/css/navigation";
 // import required modules
 import { EffectCards, Navigation } from "swiper";
 import { relativeToAbsoluteUrls } from "@/src/utils/relativeToAbsoluteUrls";
+import Image from "next/image";
+import Avatar from "src/subComponents/Avatar";
 
 const LatestComments = (props) => {
   const { latestComments } = usePageContext();
 
   const CommentItem = ({ content }) => {
-    return <p
+    return <div
       className={`[&>a]:text-blue-400 [&>a]:underline text-md  text-black text-justify line-clamp-3`}
       dangerouslySetInnerHTML={{ __html: content?.includes("<img") ? content : relativeToAbsoluteUrls(content) }} />
   };
   const ReplyComment = ({ comments, parentId }) => {
     return comments.map((comment) => {
       return (
-        comment.parentId === parentId && <ReplyCommentItem comment={comment} key={comment.parentId}/>
+        comment.parentId === parentId && <ReplyCommentItem comment={comment} key={comment.parentId} />
       );
     });
   };
@@ -32,29 +34,21 @@ const LatestComments = (props) => {
   const ReplyCommentItem = ({ comment }) => {
     return (
       <div className="mt-4">
-        {/* === Author === */}
-        <div className="flex flex-row gap-3 items-ends">
-          {/* === Avatar === */}
-          <div className="avatar">
-            <div className="w-11 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 mask mask-hexagon ">
-              <img src={comment.parent.node.author.node.avatar.url} alt=""/>
-            </div>
-          </div>
-          {/* === author info === */}
-          <div className="flex flex-col justify-around">
-            <h3 className="text-[0.8rem] text-gray-500 font-semibold">{comment.parent.node.author.node.name}</h3>
-            <span className="text-gray-400 text-[.6rem]">{new Date(comment.parent.node?.date).toLocaleDateString('fa-IR', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-          </div>
-        </div>
+        {/* === Avatar author === */}
+        <Avatar
+          url={comment.parent.node.author.node.avatar.url}
+          name={comment.parent.node.author.node.name}
+          date={comment.parent.node?.date}
+        />
         {/* === content === */}
         <div className="flex gap-3 mt-3">
           <p className="text-gray-400 text-md">پاسخ:</p>
           {/* <Paragraph content={comment.content} key={comment.id} textAlign="right"/> */}
-          <p
+          <div
             className={`[&>a]:text-blue-400 [&>a]:underline text-md  text-black text-justify line-clamp-3`}
             dangerouslySetInnerHTML={{ __html: comment.content?.includes("<img") ? content : relativeToAbsoluteUrls(comment.content) }} />
         </div>
-      </div>
+      </div >
     );
   };
   return (

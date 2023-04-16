@@ -10,7 +10,7 @@ const Paragraph = ({
 }) => {
     return (
         <p
-            className={`[&>a]:text-blue-400 [&>a]:underline  text-md lg:text-xl  text-black max-w-6xl mx-auto mb-6 pt-2 ${getTextAlign(textAlign)} ${className ? className : ""}`}
+            className={`[&>a]:text-blue-400 [&>a]:underline  text-md lg:text-xl  text-black max-w-6xl mx-auto mb-6 pt-2 ${textAlign === "right" ? "text-justify" : getTextAlign(textAlign)} ${className ? className : ""} `}
             style={{ color: textColor }}
             dangerouslySetInnerHTML={{ __html: content?.includes("<img") ? content : relativeToAbsoluteUrls(content) }} />
     )

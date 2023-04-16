@@ -7,11 +7,16 @@ import Columns from "../Columns/Columns";
 import Cover from "../Cover/Cover";
 import FeatureBox from "../FeatureBox/FeatureBox";
 import Gallery from "../Gallery/Gallery";
+import GalleryPlugin from "../GalleryPlugin/GalleryPlugin";
 import Heading from "../Heading/Heading";
 import LatestComments from "../LatestComments/LatestComments";
+import List from "../List/List";
+import ListItem from "../List/ListItem";
+import MagicContent from "../MagicContent/MagicContent";
 import Paragraph from "../Paragraph/Paragraph";
 import PostTitle from "../PostTitle/PostTitle";
 import PropertySearch from "../PropertySearch/PropertySearch";
+import Quote from "../Quote/Quote";
 
 export const BlockRenderer = ({ blocks, latestComments }) => {
     return blocks?.map((block) => {
@@ -75,8 +80,8 @@ export const BlockRenderer = ({ blocks, latestComments }) => {
                 return <Image
                     key={block.id}
                     src={block.attributes.url}
-                    height={block.attributes?.orginalHeight || 500}
-                    width={block.attributes?.orginalWidth || 400}
+                    height={block.attributes?.orginalHeight || 600}
+                    width={block.attributes?.orginalWidth || 500}
                     objectFit="contain"
                     alt={block.attributes.alt || ""}
                 />
@@ -103,6 +108,21 @@ export const BlockRenderer = ({ blocks, latestComments }) => {
             }
             case "icb/cards": {
                 return <CardInfo key={block.id} content={block.attributes} />
+            }
+            case "core/quote": {
+                return <Quote key={block.id} content={block.innerBlocks} />
+            }
+            case "image-gallery-block/image-gallery-block": {
+                return <GalleryPlugin content={block.attributes} key={block.id} />
+            }
+            case "core/list": {
+                return <List content={block.innerBlocks} key={block.id} />
+            }
+            case "core/list-item": {
+                return <ListItem content={block.attributes} innerBlocks={block.innerBlocks} key={block.id} />
+            }
+            case "magic-content-box/content-box": {
+                return <MagicContent attributes={block.attributes} key={block.id} />
             }
             default:
                 console.log('unknow', block);

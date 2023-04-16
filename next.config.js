@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     domains: [process.env.WP_IMAGES_URL],
   },
+  env: {
+    WP_GRAPHQL_URL: process.env.WP_GRAPHQL_URL,
+  },
 };
 
 module.exports = nextConfig;
