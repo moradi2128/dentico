@@ -85,7 +85,6 @@ export const BlockRenderer = ({ blocks, latestComments }) => {
                     objectFit="contain"
                     alt={block.attributes.alt || ""}
                 />
-                break
             }
             case "core/block":
             case "core/group": {

@@ -9,7 +9,7 @@ const Layout = ({ menuData, children }) => {
         return <p>loading...</p>
     }
     return (
-        <body className='layout'>
+        <body >
             <BackToTop />
             <MainMenu
                 logo={menuData.acfOptionsMainMenu.logo.logo.sourceUrl || null}
