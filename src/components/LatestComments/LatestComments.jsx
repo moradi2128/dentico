@@ -20,7 +20,7 @@ const LatestComments = (props) => {
 
   const CommentItem = ({ content }) => {
     return <div
-      className={`[&>a]:text-blue-400 [&>a]:underline text-md  text-black text-justify line-clamp-3`}
+      className={`[&>a]:text-blue-400 [&>a]:underline md:text-md text-xs text-black text-justify line-clamp-3`}
       dangerouslySetInnerHTML={{ __html: content?.includes("<img") ? content : relativeToAbsoluteUrls(content) }} />
   };
   const ReplyComment = ({ comments, parentId }) => {
@@ -36,8 +36,8 @@ const LatestComments = (props) => {
       <div className="mt-4">
         {/* === Avatar author === */}
         <Avatar
-          url={comment.parent.node.author.node.avatar.url}
-          name={comment.parent.node.author.node.name}
+          url={comment.parent.node.author?.node.avatar.url}
+          name={comment.parent.node.autho?.node.name}
           date={comment.parent.node?.date}
         />
         {/* === content === */}
@@ -45,7 +45,7 @@ const LatestComments = (props) => {
           <p className="text-gray-400 text-md">پاسخ:</p>
           {/* <Paragraph content={comment.content} key={comment.id} textAlign="right"/> */}
           <div
-            className={`[&>a]:text-blue-400 [&>a]:underline text-md  text-black text-justify line-clamp-3`}
+            className={`[&>a]:text-blue-400 [&>a]:underline md:text-base text-xs  text-black text-justify line-clamp-3`}
             dangerouslySetInnerHTML={{ __html: comment.content?.includes("<img") ? content : relativeToAbsoluteUrls(comment.content) }} />
         </div>
       </div >

@@ -29,7 +29,7 @@ const GalleryItem = ({ title, destination, date, imageUri, iamgeAlt }) => {
 }
 const Gallery = (props) => {
   return (
-    <div className='container mx-auto px-5'>
+    <div className='container '>
       <div className='columns-1 md:columns-2 lg:columns-3 gap-5 py-16'>
         {(props.gallery || []).map((item,i) => {
           return <GalleryItem

@@ -7,7 +7,7 @@ import Paragraph from '../Paragraph/Paragraph'
 const GalleryItem = ({ block, index }) => {
 
     const renderCard = () => {
-        return <div className={`aspect-video w-full group transition-all relative mb-6 overflow-hidden card-rounded min-h-[500px]`}>
+        return <div className={`w-full group transition-all relative mb-6 overflow-hidden card-rounded min-h-[500px]`}>
             <Image src={block.url} layout="fill" objectFit='cover' alt={block.alt || ""} />
             <div className=' absolute bottom-0 right-0 left-0 opacity-50 transition-all duration-300 h-[100%] group-hover:h-[100%]  bg-gradient-to-t from-primary group-hover:to-primary ' />
             {/* === content === */}

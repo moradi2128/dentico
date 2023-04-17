@@ -9,7 +9,7 @@ const Layout = ({ menuData, children }) => {
         return <p>loading...</p>
     }
     return (
-        <body >
+        <body  >
             <BackToTop />
             <MainMenu
                 logo={menuData.acfOptionsMainMenu.logo.logo.sourceUrl || null}
@@ -17,7 +17,9 @@ const Layout = ({ menuData, children }) => {
                 callToActionLabel={menuData.acfOptionsMainMenu.mainMenu.callToActionButton.label}
                 callToActionDestination={menuData.acfOptionsMainMenu.mainMenu.callToActionButton.destinatio?.uri || null} />
             {/* === body === */}
-            {children}
+            <div className='overflow-x-hidden'>
+                {children}
+            </div>
             {/* === footer */}
             {menuData.getFooter && <Footer footer={menuData.getFooter} logo={menuData.acfOptionsMainMenu.logo.logo.sourceUrl || null} />}
         </body>

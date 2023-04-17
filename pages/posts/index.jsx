@@ -50,7 +50,7 @@ const Posts = (props) => {
   }, []);
 
   return (
-    <div className="container  mx-auto">
+    <div className="container ">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-7">
         {/* category & tags & last Posts === */}
         <div className="flex flex-col gap-5">

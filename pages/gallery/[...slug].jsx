@@ -35,11 +35,11 @@ const GalleyDetail = (props) => {
             <div className="text-white min-h-[600px] relative flex justify-center items-center z-10">
                 {featuredImage.node.sourceUrl && <Image src={featuredImage.node.sourceUrl} layout="fill" objectFit='contain' className='mix-blend-soft-light' alt={title} />}
             </div>
-            <div className='container mx-auto px-4 my-10'>
+            <div className='container  my-10'>
                 <div className='grid grid-cols-1 md:grid-cols-4 gap-6'>
                     {/* === articels === */}
                     <div className=''>
-                        <h2 className='text-4xl text-primary mb-5'>{pageName}</h2>
+                        {/* <h2 className='text-4xl text-primary mb-5'>{pageName}</h2>
                         <ul>
                             {(props.allGallery || []).map((galley) => {
                                 return <li className='mb-4' key={gallery.id}>
@@ -50,7 +50,7 @@ const GalleyDetail = (props) => {
                                     </Link>
                                 </li>
                             })}
-                        </ul>
+                        </ul> */}
                     </div>
                     {/* === content body === */}
                     <div className=' my-10 px-4 col-span-3'>

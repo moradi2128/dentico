@@ -93,7 +93,7 @@ const PostDetail = (props) => {
         {/* === comments === */}
         <div className="my-14">
           <div className='flex justify-between items-center'>
-            <h2 className='mb-4 text-4xl text-primary font-semibold'>نظرات کاربران</h2>
+            <h2 className='mb-4 text-2xl md:text-4xl text-primary font-semibold'>نظرات کاربران</h2>
             {/* === comment Form Modal btn === */}
             <label htmlFor="commnetForms" className="btn gap-2 btn-ghost relative">
               <svg viewBox="0 0 39 104" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-3 rotate-45 absolute -top-5 right-0"><path d="M9.96 92.03c3.946 3.092 9.307 7.14 13.43 9.493m0 0c.474.271.204-3.913.177-4.109-.581-4.301-1.625-8.535-2.764-12.848m2.586 16.957C4.44 80.457-2.175 53.037 5.481 38.907c.758-1.4 1.586-2.924 2.55-4.313m0 0c1.537-2.213 3.422-4.087 5.935-4.59 2.318-.463 5.784.17 7.94 2.607 4.027 4.553 2.166 11.094-2.429 11.22-4.037.112-9.76-4.42-11.445-9.237Zm0 0a9.684 9.684 0 0 1-.1-.305C.23 9.709 19.54-1.921 36.868 3.657" stroke="currentColor" strokeWidth="3" strokeMiterlimit="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
@@ -155,6 +155,9 @@ export async function getServerSideProps(ctx) {
                 author {
                   node {
                     name
+                    avatar {
+                      url
+                    }
                   }
                 }
                 parent {

@@ -46,9 +46,9 @@ const Comments = ({ comments }) => {
             <div className="mt-7 mr-10 border-r border-t rounded-tr-xl pt-4 pr-4">
                 {/* === Avatar author === */}
                 <Avatar
-                    url={comment.parent.node.author.node.avatar.url}
-                    name={comment.parent.node.author.node.name}
-                    date={comment.parent.node?.date}
+                    url={comment.author.node.avatar?.url}
+                    name={comment.author.node?.name}
+                    date={comment?.date}
                 />
                 {/* === content === */}
                 <div className="flex gap-3 mt-3">

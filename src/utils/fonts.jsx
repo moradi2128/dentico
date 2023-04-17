@@ -10,7 +10,7 @@ export const getTextAlign = (textAlign = "right") => {
 export const getFontSizeForHeading = (level) => {
     const fontSizeMap = {
         1: "text-6xl leading-[70px] font-extrabold",
-        2: "text-5xl leading-[60px] font-bold",
+        2: "text-4xl md:text-5xl leading-[60px] font-extrabold ",
         3: "text-4xl leading-[50px] font-semibold",
         4: "text-3xl leading-[50px] font-medium",
         5: "text-2xl leading-[50px] font-medium",

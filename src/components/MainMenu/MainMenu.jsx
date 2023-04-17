@@ -46,7 +46,7 @@ const MainMenu = (props) => {
     const handleScroll = () => {
         const currentScrollPos = window.scrollY
 
-        if (currentScrollPos > prevScrollPos) {
+        if (currentScrollPos > prevScrollPos ) {
             setVisible(false)
         } else {
             setVisible(true)
