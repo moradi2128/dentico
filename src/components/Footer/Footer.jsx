@@ -14,7 +14,7 @@ const Footer = (props) => {
               <Logo src={props.logo} />
               <div
                 className='prose prose-ul:flex prose-ul:gap-7'
-                dangerouslySetInnerHTML={{ __html: props.footer.sidebarOne?.includes("<img") ? content : relativeToAbsoluteUrls(props.footer.sidebarOne) }}
+                dangerouslySetInnerHTML={{ __html: relativeToAbsoluteUrls(props.footer.sidebarOne) }}
               />
             </div>
           </div>

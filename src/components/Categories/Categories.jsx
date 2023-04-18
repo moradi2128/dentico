@@ -1,9 +1,10 @@
 import React from 'react'
+import ArticlesPostLayout from 'src/Layout/ArticlesPostLayout'
 import Category from './Category'
 
 const Categories = ({ categories }) => {
     return (
-        <div>
+        <ArticlesPostLayout>
             {/* === Title === */}
             <h2 className='text-2xl mb-2 font-semibold text-primary'>دسته بندی ها</h2>
 
@@ -14,7 +15,7 @@ const Categories = ({ categories }) => {
                 })}
             </div>
 
-        </div>
+        </ArticlesPostLayout>
     )
 }
 

@@ -16,7 +16,7 @@ const Post = ({ post }) => {
         <div className='h-full flex items-end px-3 py-4 z-0 relative'>
           <div className='flex gap-3'>
             {(tags?.nodes || []).map((tag, i) => {
-              return <div className="badge badge-primary badge-outline badge-sm text-white" key={i}>{tag?.name}</div>
+              return <div className="badge bg-white badge-sm outline-none border-none text-gray-500" key={i}>{tag?.name}</div>
             })}
           </div>
         </div>

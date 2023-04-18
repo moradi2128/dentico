@@ -1,9 +1,10 @@
 import React from 'react'
+import ArticlesPostLayout from 'src/Layout/ArticlesPostLayout'
 import Tag from './Tag'
 
 const Tags = ({ tags }) => {
     return (
-        <div>
+        < ArticlesPostLayout>
             {/* === Title === */}
             <h2 className='text-2xl mb-3 font-semibold text-primary'>تگ ها</h2>
 
@@ -14,7 +15,7 @@ const Tags = ({ tags }) => {
                 })}
             </div>
 
-        </div>
+        </ArticlesPostLayout>
     )
 }
 
