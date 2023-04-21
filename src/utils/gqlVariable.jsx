@@ -3,7 +3,10 @@ const { gql } = require("@apollo/client");
 export const GET_MENU = gql`
 query GetMenu {
  acfOptionsMainMenu {
-    logo {
+  Logo {
+      favicon {
+        sourceUrl
+      }
       logo {
         sourceUrl
       }

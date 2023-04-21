@@ -12,11 +12,11 @@ const Layout = ({ menuData, children }) => {
     return (
         <body  >
             <Head>
-                <link rel="icon" href={menuData.acfOptionsMainMenu.logo.logo.sourceUrl || ""} />
+                <link rel="icon" href={menuData.acfOptionsMainMenu.Logo.favicon.sourceUrl || ""} />
             </Head>
             <BackToTop />
             <MainMenu
-                logo={menuData.acfOptionsMainMenu.logo.logo.sourceUrl || null}
+                logo={menuData.acfOptionsMainMenu.Logo.logo.sourceUrl || null}
                 mainMenu={mainMaenuItems(menuData.acfOptionsMainMenu.mainMenu.menuItems)}
                 callToActionLabel={menuData.acfOptionsMainMenu.mainMenu.callToActionButton.label}
                 callToActionDestination={menuData.acfOptionsMainMenu.mainMenu.callToActionButton.destinatio?.uri || null} />
@@ -25,7 +25,7 @@ const Layout = ({ menuData, children }) => {
                 {children}
             </div>
             {/* === footer */}
-            {menuData.getFooter && <Footer footer={menuData.getFooter} logo={menuData.acfOptionsMainMenu.logo.logo.sourceUrl || null} />}
+            {menuData.getFooter && <Footer footer={menuData.getFooter} logo={menuData.acfOptionsMainMenu.Logo.logo.sourceUrl || null} />}
         </body>
     )
 }
