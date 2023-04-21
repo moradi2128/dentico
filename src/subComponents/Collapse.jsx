@@ -1,12 +1,12 @@
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import React from 'react'
 
-const Collapse = ({ content }) => {
+const Collapse = ({ content, isOpen = false }) => {
     // const { jsonAnswer, jsonQuestion, jsonImageSrc } = conetent
     return (
         <details
             className="group rounded-lg border-r-4 border-secondary bg-gray-100 p-6 [&_summary::-webkit-details-marker]:hidden mb-5"
-            open
+            open={isOpen}
         >
             <summary class="flex items-center justify-between cursor-pointer">
                 <div
