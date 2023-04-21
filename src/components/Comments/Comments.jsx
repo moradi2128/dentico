@@ -63,7 +63,7 @@ const Comments = ({ comments }) => {
     };
     return (
         <div
-            className="mx-0 my-12 flex flex-col gap-11"
+            className="mx-0 my-12 flex flex-col"
         >
             {comments.length === 0 ?
                 <p className="font-semibold text-center">نظری ثبت نشده است!</p>
@@ -73,7 +73,7 @@ const Comments = ({ comments }) => {
                         !comment.parent && (
                             <div
                                 key={comment.id}
-                                className=" bg-white shadow-custom tex-xl rounded-2xl [&>p]:text-sm p-6"
+                                className=" bg-white shadow-custom tex-xl rounded-2xl [&>p]:text-sm p-6 mb-11"
                             >
                                 <CommentItem content={comment.content} date={comment.date} author={comment.author} />
                                 <ReplyComment comments={comments} parentId={comment.id} />

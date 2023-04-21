@@ -6,7 +6,7 @@ const HeadSeo = ({ seo }) => {
         <Head>
             <title>{seo.title}</title>
             <meta name="description" content={seo.metaDesc} />
-            <link rel="icon" href="/favicon.ico" />
+            {/* <link rel="icon" href="/favicon.ico" /> */}
         </Head>
     )
 }

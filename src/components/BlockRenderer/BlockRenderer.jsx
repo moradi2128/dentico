@@ -5,6 +5,7 @@ import CardInfo from "../CardInfo/CardInfo";
 import Column from "../Column/Column";
 import Columns from "../Columns/Columns";
 import Cover from "../Cover/Cover";
+import FAG from "../FAG/FAG";
 import FeatureBox from "../FeatureBox/FeatureBox";
 import Gallery from "../Gallery/Gallery";
 import GalleryPlugin from "../GalleryPlugin/GalleryPlugin";
@@ -122,6 +123,9 @@ export const BlockRenderer = ({ blocks, latestComments }) => {
             }
             case "magic-content-box/content-box": {
                 return <MagicContent attributes={block.attributes} key={block.id} />
+            }
+            case "yoast/faq-block": {
+                return <FAG questions={block.attributes.questions} key={block.id} />
             }
             default:
                 console.log('unknow', block);

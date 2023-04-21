@@ -56,9 +56,9 @@ const Posts = (props) => {
     <div className="container ">
       <HeadSeo seo={props.seo} />
       <BlockRenderer blocks={props.pageBlock} />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-14">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
         {/* category & tags & last Posts === */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 pb-20">
           <Categories categories={props.allCategories} />
           <LastPosts posts={props.lastPosts} />
           <Tags tags={props.allTags} />

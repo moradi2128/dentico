@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import React from 'react'
 import BackToTop from '../components/BackToTop/BackToTop'
 import Footer from '../components/Footer/Footer'
@@ -10,6 +11,9 @@ const Layout = ({ menuData, children }) => {
     }
     return (
         <body  >
+            <Head>
+                <link rel="icon" href={menuData.acfOptionsMainMenu.logo.logo.sourceUrl || ""} />
+            </Head>
             <BackToTop />
             <MainMenu
                 logo={menuData.acfOptionsMainMenu.logo.logo.sourceUrl || null}
