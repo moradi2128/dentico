@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react'
 import { theme } from 'theme';
 import CallToActionButton from '../CallToActionButton/CallToActionButton';
@@ -7,29 +8,34 @@ const CardItemVertical = ({ contentCard, descColor, contentAlign }) => {
     const { background, btnLabal, btnUrl, desc, img, title, titleColor = theme.primary, btnAlign = "right" } = contentCard;
 
     return <div
-        className={`min-h-[450px] max-w-[350px] mx-auto group  hover:shadow-xl rounded-tl-[2.5rem] rounded-br-[2.5rem] mb-11 transition-all`}
+        className={`max-w-[350px] mx-auto group rounded-3xl overflow-hidden mb-11 transition-all shadow-2xl p-3`}
         style={{ backgroundColor: background.color }}
     >
         {/* === Image === */}
-        {img && <RenderImageCard img={img} />
-        }
+        <div className={`min-h-[250px] relative overflow-hidden rounded-2xl mb-5 shadow-inner`}>
+            <Image src={img} layout="fill" objectFit='cover' className='transition-all group-hover:scale-105' alt="" />
+            {/* <div className='bg-gradient-to-t from-primary/30 to-secondary/10 absolute inset-0 transition-all group-hover:bg-transparent ' /> */}
+        </div>
+
         {/*  === Body === */}
-        <div className={`px-6 pt-5 pb-6 text-[${contentAlign}]`}>
-            {/* === Title === */}
-            <h2 className={`card-titld text-2xl mb-3 text-[${titleColor}]`}>{title}</h2>
-            {/* == desciption === */}
-            <p className={`mb-3 text-[${descColor}] `}>{desc}</p>
-            {/* === Button === */}
-            {btnLabal !== "" &&
-                <div className='transition-all opacity-0 group-hover:opacity-100'>
-                    <CallToActionButton
-                        buttonLabel={btnLabal}
-                        destination={btnUrl}
-                        align="center"
-                        className="w-full"
-                    />
-                </div>
-            }
+        <div className={` text-[${contentAlign}]`}>
+            <div className='w-full'>
+                {/* === Title === */}
+                <h2 className={`card-titld text-2xl mb-3 text-[${titleColor}]`}>{title}</h2>
+                {/* == desciption === */}
+                <p className={`mb-3 text-sm text-[${descColor}] `}>{desc}</p>
+                {/* === Button === */}
+                {btnLabal !== "" &&
+                    <div className='transition-all opacity-100 group-hover:opacity-100'>
+                        <CallToActionButton
+                            buttonLabel={btnLabal}
+                            destination={btnUrl}
+                            align="center"
+                            className="w-full "
+                        />
+                    </div>
+                }
+            </div>
         </div>
 
     </div >

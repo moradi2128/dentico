@@ -1,6 +1,6 @@
 import React from 'react'
 import { BlockRenderer } from '../BlockRenderer'
-import ListItem from './ListItem'
+
 
 const List = ({ content }) => {
     return (

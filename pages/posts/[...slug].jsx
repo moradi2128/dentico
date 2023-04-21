@@ -1,6 +1,7 @@
 import { BlockRenderer } from '@/src/components/BlockRenderer'
 import Comments from '@/src/components/Comments/Comments'
 import CommentForm from '@/src/components/CommnetForm/CommentForm'
+import HeadSeo from '@/src/components/HeadSeo/HeadSeo'
 import { cleanAndTransformBlocks } from '@/src/utils/cleanAndTransformBlocks'
 import { gql } from '@apollo/client'
 import { ChatBubbleBottomCenterIcon } from '@heroicons/react/24/outline'
@@ -11,7 +12,7 @@ import Avatar from 'src/subComponents/Avatar'
 import Modal from 'src/subComponents/Modal'
 
 const PostDetail = (props) => {
-  const { title, featuredImage, date, databaseId, commentCount, comments, blocksJSON, author } = props.post
+  const { title, seo, featuredImage, date, databaseId, commentCount, comments, blocksJSON, author } = props.post
   const [blogs, setBlogs] = useState([])
   // === message handler => comment form ===
   const [errorMessage, setErrorMessage] = useState(false)
@@ -75,13 +76,19 @@ const PostDetail = (props) => {
   }
   return (
     <div>
+      {/* === Head ===*/}
+      <HeadSeo seo={seo} />
       {/* === cover === */}
-      <div className="text-white min-h-[600px] relative flex justify-center items-center z-10">
+      <div className="min-h-[600px] relative flex items-center z-10">
         {featuredImage.node.sourceUrl && <Image src={featuredImage.node.sourceUrl} layout="fill" objectFit='cover' className='mix-blend-soft-light' alt={title} />}
+        {/* <div className='bg-primary/30 absolute inset-0 ' />
+        <div className="container">
+          <h2 className='text-5xl text-white lg:text-6xl mb-8 relative z-[5]'>{title}</h2>
+        </div> */}
       </div>
+      {/* === Title === */}
       <div className='mx-auto max-w-4xl my-10 px-4'>
-        {/* === Title === */}
-        <h2 className='text-5xl lg:text-6xl mb-8'>{title}</h2>
+        <h2 className='text-4xl lg:text-6xl mb-7'>{title}</h2>
         {/* === Author info === */}
         <div className='mb-10 flex items-end gap-3'>
           <Avatar name={author.node.name} date={date} url={author.node.avatar.url} />
@@ -135,6 +142,15 @@ export async function getServerSideProps(ctx) {
                 }
                 name
               }
+            }
+            seo {
+              breadcrumbs {
+                url
+                text
+              }
+              fullHead
+              metaDesc
+              title
             }
             date
             title

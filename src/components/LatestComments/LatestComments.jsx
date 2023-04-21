@@ -16,7 +16,7 @@ import Image from "next/image";
 import Avatar from "src/subComponents/Avatar";
 
 const LatestComments = (props) => {
-  const { latestComments } = usePageContext();
+  const context  = usePageContext();
 
   const CommentItem = ({ content }) => {
     return <div
@@ -67,7 +67,7 @@ const LatestComments = (props) => {
        [&>.swiper-button-next:after]:content-['']
        "
     >
-      {(latestComments || []).map((comment) => {
+      {(context?.latestComments || []).map((comment) => {
         return (
           !comment.parentId && (
             <SwiperSlide
@@ -75,7 +75,7 @@ const LatestComments = (props) => {
               className=" bg-white shadow-custom-lg tex-xl rounded-2xl max-h-[250px] [&>p]:text-sm p-5"
             >
               <CommentItem content={comment.content} />
-              <ReplyComment comments={latestComments} parentId={comment.id} />
+              <ReplyComment comments={context?.latestComments} parentId={comment.id} />
             </SwiperSlide>
           )
         );

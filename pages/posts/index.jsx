@@ -11,6 +11,9 @@ import LastPosts from "@/src/components/LastPosts/LastPosts";
 import Tags from "@/src/components/Tags/Tags";
 import { SkeletonCard } from "@/src/components/Posts/SkeletonCardPost";
 import NotFound from "src/subComponents/NotFound";
+import { cleanAndTransformBlocks } from "@/src/utils/cleanAndTransformBlocks";
+import { BlockRenderer } from "@/src/components/BlockRenderer";
+import HeadSeo from "@/src/components/HeadSeo/HeadSeo";
 
 const Posts = (props) => {
   const [posts, setPosts] = useState([]);
@@ -51,9 +54,11 @@ const Posts = (props) => {
 
   return (
     <div className="container ">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-7">
+      <HeadSeo seo={props.seo} />
+      <BlockRenderer blocks={props.pageBlock} />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-14">
         {/* category & tags & last Posts === */}
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-6">
           <Categories categories={props.allCategories} />
           <LastPosts posts={props.lastPosts} />
           <Tags tags={props.allTags} />
@@ -89,6 +94,29 @@ const Posts = (props) => {
 export default Posts;
 
 export async function getStaticProps() {
+  const uri = `posts`
+  const { data: pageBlock } = await client.query({
+    query: gql`
+      query Page($uri: String!) {
+        nodeByUri(uri: $uri) {
+          ... on Page {
+            blocksJSON
+            seo {
+              breadcrumbs {
+                url
+                text
+              }
+              fullHead
+              metaDesc
+              title
+            }
+          }
+        }
+      }
+        `,
+    variables: { uri }
+  })
+
   const { data: lastPosts } = await client.query({
     query: gql`
         query LastPosts {
@@ -97,6 +125,7 @@ export async function getStaticProps() {
               title
               uri
               date
+              commentCount
             }
           }
         }
@@ -130,6 +159,8 @@ export async function getStaticProps() {
 
   return {
     props: {
+      pageBlock: await cleanAndTransformBlocks(pageBlock.nodeByUri.blocksJSON),
+      seo: pageBlock.nodeByUri.seo,
       lastPosts: lastPosts?.posts.nodes,
       allTags: allTags?.tags.nodes,
       allCategories: allCategories?.categories.nodes,

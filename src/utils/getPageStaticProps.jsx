@@ -13,6 +13,15 @@ export const getPageStaticProps = async (context) => {
             id
             title
             blocksJSON
+            seo {
+              breadcrumbs {
+                url
+                text
+              }
+              fullHead
+              metaDesc
+              title
+            }
             comments(first: 5) {
               nodes {
                 content
@@ -47,6 +56,7 @@ export const getPageStaticProps = async (context) => {
   return {
     props: {
       title: data.nodeByUri.title,
+      seo: data.nodeByUri.seo,
       blocks: await cleanAndTransformBlocks(data.nodeByUri.blocksJSON),
       latestComments: data.nodeByUri?.comments?.nodes || null,
       featuredImage: data.nodeByUri?.featuredImage?.node?.sourceUrl || null,

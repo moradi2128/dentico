@@ -30,6 +30,7 @@ const handler = async (req, res) => {
               }
             }
             uri
+            excerpt
             title
             date
             featuredImage {

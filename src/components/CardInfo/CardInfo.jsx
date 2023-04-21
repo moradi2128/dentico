@@ -14,7 +14,7 @@ const CardInfo = ({ content }) => {
             {layout === "vertical" && <div className='md:hidden absolute left-0 top-0 bottom-0 w-[50%]  bg-gradient-to-r from-white/90  z-10' />}
             <Swiper
                 // loop={true}
-                className='mb-9 container'
+                className='py-10 px-7 container'
                 spaceBetween={parseInt(columnGap, 10)}
                 slidesPerView={1.2}
                 breakpoints={{

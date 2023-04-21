@@ -4,9 +4,9 @@ import Heading from '../Heading/Heading'
 
 const PostTitle = ({ lavel,
     textAlign }) => {
-    const { title } = usePageContext()
+    const context = usePageContext()
     return (
-        <Heading content={title} level={lavel} textAlign={textAlign} />
+        <Heading content={context?.title} level={lavel} textAlign={textAlign} />
     )
 }
 

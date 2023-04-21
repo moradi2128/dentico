@@ -1,3 +1,6 @@
+import { BlockRenderer } from '@/src/components/BlockRenderer'
+import HeadSeo from '@/src/components/HeadSeo/HeadSeo'
+import { cleanAndTransformBlocks } from '@/src/utils/cleanAndTransformBlocks'
 import { convertDateToPersionDate } from '@/src/utils/convertDateToPersionDate'
 import { gql } from '@apollo/client'
 import { CalendarDaysIcon } from '@heroicons/react/24/outline'
@@ -30,8 +33,10 @@ const GalleryItem = ({ title, destination, date, imageUri, iamgeAlt }) => {
 const Gallery = (props) => {
   return (
     <div className='container '>
+      <HeadSeo seo={props.seo} />
+      <BlockRenderer blocks={props.pageBlock} />
       <div className='columns-1 md:columns-2 lg:columns-3 gap-5 py-16'>
-        {(props.gallery || []).map((item,i) => {
+        {(props.gallery || []).map((item, i) => {
           return <GalleryItem
             key={i}
             title={item.title}
@@ -49,23 +54,29 @@ const Gallery = (props) => {
 
 export default Gallery
 
-// export async function getStaticProps() {
-//   const { data: menuData } = await client.query({
-//     query: GET_MENU
-//   })
-//   return {
-//     props: {
-//       logo: menuData.acfOptionsMainMenu.logo.logo.sourceUrl || null,
-//       mainMenuItems: mainMaenuItems(menuData.acfOptionsMainMenu.mainMenu.menuItems),
-//       footer: menuData.getFooter,
-//       callToActionLabel: menuData.acfOptionsMainMenu.mainMenu.callToActionButton.label,
-//       callToActionDestination: menuData.acfOptionsMainMenu.mainMenu.callToActionButton.destinatio?.uri || null
-//     },
-//   }
-
-// }
-
 export async function getStaticProps() {
+  const uri = `gallery`
+  const { data: pageBlock } = await client.query({
+    query: gql`
+      query Page($uri: String!) {
+        nodeByUri(uri: $uri) {
+          ... on Page {
+            blocksJSON
+            seo {
+              breadcrumbs {
+                url
+                text
+              }
+              fullHead
+              metaDesc
+              title
+            }
+          }
+        }
+      }
+        `,
+    variables: { uri }
+  })
   const { data } = await client.query({
     query: gql`
     query GetAllGallery {
@@ -89,6 +100,8 @@ export async function getStaticProps() {
 
   return {
     props: {
+      pageBlock: await cleanAndTransformBlocks(pageBlock.nodeByUri.blocksJSON),
+      seo: pageBlock.nodeByUri.seo,
       gallery: data?.allGallery.nodes,
     },
   }
