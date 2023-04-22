@@ -39,11 +39,11 @@ const GalleryDetail = (props) => {
             <HeadSeo seo={seo} />
             {/* === cover === */}
             <Cover>
-                <div className='grid grid-cols-2 items-center'>
+                <div className='grid grid-cols-1 items-center md:grid-cols-2 gap-5 py-8 container'>
                     {/* === header === */}
                     <div>
                         <Breadcrumb breadcrumbs={seo.breadcrumbs} />
-                        <h2 className='text-5xl text-secondary my-3'>{title}</h2>
+                        <h2 className='text-3xl md:text-5xl text-secondary my-3'>{title}</h2>
                         <h4 className='text-gray-500'>{convertDateToPersionDate(date)}</h4>
                     </div>
                     {/* === featured Image === */}
