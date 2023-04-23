@@ -1,7 +1,7 @@
 import { relativeToAbsoluteUrls } from '@/src/utils/relativeToAbsoluteUrls'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
-import Link from 'next/link'
 import React from 'react'
+import LinkCustom from 'src/subComponents/LinkCustom'
 
 const FeatureBox = ({ description, title, destination,sub_description }) => {
     const renderCard = (title, description) => {
@@ -20,11 +20,11 @@ const FeatureBox = ({ description, title, destination,sub_description }) => {
     }
     if (destination?.url) {
         return (
-            <Link href={relativeToAbsoluteUrls(destination.url)}>
+            <LinkCustom href={relativeToAbsoluteUrls(destination.url)}>
                 <a>
                     {renderCard(title, description)}
                 </a>
-            </Link>
+            </LinkCustom>
         )
     }
     return renderCard(title, description)

@@ -8,9 +8,10 @@ import client from 'client'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import LinkCustom from 'src/subComponents/LinkCustom'
 
 const GalleryItem = ({ title, destination, date, imageUri, iamgeAlt }) => {
-  return <Link href={destination}>
+  return <LinkCustom href={destination}>
     <a>
       <div className={`w-full group transition-all relative mb-6 overflow-hidden card-rounded min-h-[500px] shadow-custom-lg hover:shadow-black/40 border border-gray-200`}>
         {imageUri && <Image src={imageUri} layout="fill" objectFit='cover' alt={iamgeAlt || ""} className="group-hover:scale-105 transition-all duration-300" />}
@@ -28,7 +29,7 @@ const GalleryItem = ({ title, destination, date, imageUri, iamgeAlt }) => {
         </div>
       </div>
     </a>
-  </Link>
+  </LinkCustom>
 }
 const Gallery = (props) => {
   return (

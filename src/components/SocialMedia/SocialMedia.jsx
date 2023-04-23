@@ -1,7 +1,7 @@
 import { faBathtub } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Link from 'next/link'
 import React from 'react'
+import LinkCustom from 'src/subComponents/LinkCustom'
 const SocialMedia = () => {
     const testData = [
         {
@@ -36,11 +36,11 @@ const SocialMedia = () => {
                     group
                     "
                     >
-                        <Link href={item.destination}>
+                        <LinkCustom href={item.destination}>
                             <a className='w-[40px] h-[40px] flex justify-center items-center relative z-20 text-gray-400 group-hover:text-secondary'>
                                 {item.icon}
                             </a>
-                        </Link>
+                        </LinkCustom>
                     </li>
                 })
             }

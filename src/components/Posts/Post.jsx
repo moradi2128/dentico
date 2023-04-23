@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react'
 import Avatar from 'src/subComponents/Avatar';
+import LinkCustom from 'src/subComponents/LinkCustom';
 
 const Post = ({ post }) => {
   let { author, categories, featuredImage, tags, title, excerpt, uri, date, } = post
@@ -54,15 +54,15 @@ const Post = ({ post }) => {
         <div className='absolute bg-gradient-to-b from-zinc-900/10 to-black/70 inset-0 group-hover:bg-black/20 transition-all duration-300 ' />
       </div>
       {/* === Body === */}
-      <Link href={uri}>
+      <LinkCustom href={uri}>
         <a>
           <div className='px-3 pt-4 justify-end flex flex-col flex-1 h-full gap-4'>
             <div className='border-b border-gray-300 pb-4'>
-              <Link href={uri}>
+              <LinkCustom href={uri}>
                 <a >
                   <h2 className='text-2xl text-white mb-3'>{title}</h2>
                 </a>
-              </Link>
+              </LinkCustom>
               <div
               className='text-gray-300 text-[.8rem] line-clamp-3 text-justify'
                 dangerouslySetInnerHTML={{ __html: excerpt }}
@@ -76,7 +76,7 @@ const Post = ({ post }) => {
             />
           </div>
         </a>
-      </Link>
+      </LinkCustom>
       {/* === Footer === */}
     </div>
   )

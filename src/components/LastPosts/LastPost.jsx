@@ -1,13 +1,13 @@
 import { convertDateToPersionDate } from '@/src/utils/convertDateToPersionDate';
 import { ArrowLongLeftIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
 import React from 'react'
+import LinkCustom from 'src/subComponents/LinkCustom';
 
 const LastPost = ({ post }) => {
     const { uri, title, date, commentCount } = post
 
     return (
-        <Link href={uri || ""}>
+        <LinkCustom href={uri || ""}>
             <a className='group flex justify-between items-center transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gray-200 border-r-[3px] border-secondary'>
                 <span >
                     {/* === title === */}
@@ -22,7 +22,7 @@ const LastPost = ({ post }) => {
                 {/* === arror icon === */}
                 <ArrowLongLeftIcon className='w-5 h-5 ml-1 transition-all duration-200 group-hover:ml-0' />
             </a>
-        </Link >
+        </LinkCustom >
     )
 }
 

@@ -1,13 +1,13 @@
-import Link from 'next/link'
 import React from 'react'
+import LinkCustom from 'src/subComponents/LinkCustom'
 
 const ButtonLink = ({ destination, label, className }) => {
     return (
-        <Link href={`${destination}`}>
+        <LinkCustom href={`${destination}`}>
             <a className={`btn-custom ${className ? className : ""}`} >
                 {label}
             </a>
-        </Link>
+        </LinkCustom>
     )
 }
 

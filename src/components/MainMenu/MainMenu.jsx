@@ -1,9 +1,3 @@
-
-import Link from 'next/link'
-// import ButtonLink from '../ButtonLink/ButtonLink'
-// import { Bars4Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/solid'
-// import SocialMedia from '../SocialMedia/SocialMedia'
-import { v4 as uuid } from "uuid"
 import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
@@ -14,6 +8,7 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import IocnButton from 'src/subComponents/IocnButton/IocnButton'
 import Logo from '../Logo/Logo'
 import { useRouter } from 'next/router'
+import LinkCustom from 'src/subComponents/LinkCustom'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -29,13 +24,13 @@ const MainMenu = (props) => {
 
     const renderLink = (label, destination = null, callback = null) => {
         if (destination) {
-            return <Link href={destination}>
+            return <LinkCustom href={destination}>
                 <a className={`block text-lg text-gray-400 hover:text-secondary transition-all p-4 ${(router?.pathname === "/" ? router?.pathname : (router?.pathname + "/")) == destination ? "text-secondary" : ""}`}
                     onClick={() => typeof callback === "function" && callback()}
                 >
                     {label}
                 </a>
-            </Link>
+            </LinkCustom>
         }
         return <div className='text-lg text-gray-400 hover:text-secondary transition-all p-4'>{label}</div>
     }

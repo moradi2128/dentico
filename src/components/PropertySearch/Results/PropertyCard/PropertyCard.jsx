@@ -1,13 +1,13 @@
 import { faBathtub, faBed, faCar, faDog } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
-import Link from 'next/link'
 import numeral from 'numeral'
 import React from 'react'
+import LinkCustom from 'src/subComponents/LinkCustom'
 
 const PropertyCard = ({ title, destination, bathrooms, bedrooms, price, hasParking, petFriendly, image }) => {
     return (
-        <Link href={destination}>
+        <LinkCustom href={destination}>
             <a className='border-2 border-slate-300 p-5 block bg-slate-100 hover:bg-slate-200'>
                 <div className='flex w-full'>
                     {image ? <Image
@@ -49,7 +49,7 @@ const PropertyCard = ({ title, destination, bathrooms, bedrooms, price, hasParki
                     )}
                 </div>
             </a>
-        </Link>
+        </LinkCustom>
     )
 }
 

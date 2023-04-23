@@ -11,6 +11,7 @@ import Link from 'next/link'
 import React, { useCallback, useEffect, useState } from 'react'
 import ArticlesPostLayout from 'src/Layout/ArticlesPostLayout'
 import HeadSeo from "@/src/components/HeadSeo/HeadSeo"
+import LinkCustom from 'src/subComponents/LinkCustom'
 const GalleryDetail = (props) => {
     const { blocksJSON, date, title, featuredImage, seo } = props.galleyDetail
     const [gallery, setGallery] = useState([])
@@ -66,14 +67,14 @@ const GalleryDetail = (props) => {
                             <ul>
                                 {(props.allGallery || []).map((gallery, index) => {
                                     return <li className='mb-4' key={index}>
-                                        <Link href={gallery.uri}>
+                                        <LinkCustom href={gallery.uri}>
                                             <a className="group hover:bg-gray-200 transition-all duration-200 rounded-lg py-3 px-3 text-md justify-between flex items-center border-r-[3px] border-primary">
                                                 <span className='group-hover:text-secondary transition-all duration-300'>
                                                     {gallery.title}
                                                 </span>
                                                 <span className='text-xs'>{convertDateToPersionDate(gallery.date)}</span>
                                             </a>
-                                        </Link>
+                                        </LinkCustom>
                                     </li>
                                 })}
                             </ul>
