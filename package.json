@@ -6,7 +6,8 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "postbuild": "next-sitemap"
     },
     "dependencies": {
         "@apollo/client": "^3.6.8",
@@ -26,6 +27,7 @@
         "html-react-parser": "^3.0.4",
         "iisexpress-proxy": "^1.7.25",
         "next": "12.1.6",
+        "next-sitemap": "^4.0.7",
         "numeral": "^2.0.6",
         "query-string": "^7.1.1",
         "react": "18.2.0",

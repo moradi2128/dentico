@@ -15,7 +15,7 @@ export default function Custom404() {
     });
   }, []);
   return (
-    <div className="relative h-screen w-screen overflow-hidden flex justify-center items-center">
+    <div className="bg-white h-screen w-screen overflow-hidden flex justify-center items-center fixed top-0 z-[9999]">
       <div className="circle-1 rounded-full  w-[200vh] h-[200vh] bg-blue-50 flex justify-center items-center">
         <div className="circle-1 rounded-full  w-[170vh] h-[170vh] bg-blue-100 flex justify-center items-center shadow-inner">
           <div className="circle-1 rounded-full  w-[110vh] h-[110vh] bg-blue-200 flex justify-center items-center shadow-inner">
