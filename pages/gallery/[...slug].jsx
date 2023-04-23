@@ -7,7 +7,6 @@ import { gql } from '@apollo/client'
 import client from 'client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import React, { useCallback, useEffect, useState } from 'react'
 import ArticlesPostLayout from 'src/Layout/ArticlesPostLayout'
 import HeadSeo from "@/src/components/HeadSeo/HeadSeo"

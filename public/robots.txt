@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: http://localhost:10005
+Host: https://dentino.iran.liara.run
 
 # Sitemaps
-Sitemap: http://localhost:10005/sitemap.xml
+Sitemap: https://dentino.iran.liara.run/sitemap.xml

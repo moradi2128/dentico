@@ -152,7 +152,7 @@ const MainMenu = (props) => {
                                                         {menuItem?.subMenuItems.map((subMenuItem) => (
                                                             <Disclosure.Button
                                                                 key={subMenuItem.id}
-                                                                as={Link}
+                                                                as={LinkCustom}
                                                                 href={subMenuItem.destination}
                                                             >
                                                                 <a

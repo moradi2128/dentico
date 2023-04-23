@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>http://localhost:10005</loc><lastmod>2023-04-23T06:28:33.555Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:10005/gallery</loc><lastmod>2023-04-23T06:28:33.556Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:10005/posts</loc><lastmod>2023-04-23T06:28:33.556Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:10005/سوالات-متدول</loc><lastmod>2023-04-23T06:28:33.556Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:10005/تماس-با-ما</loc><lastmod>2023-04-23T06:28:33.556Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:10005/سرویس-ها</loc><lastmod>2023-04-23T06:28:33.556Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:10005/جزئیات-سرویس</loc><lastmod>2023-04-23T06:28:33.556Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:10005/صفحات</loc><lastmod>2023-04-23T06:28:33.556Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:10005/درباره-ما</loc><lastmod>2023-04-23T06:28:33.556Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://dentino.iran.liara.run</loc><lastmod>2023-04-23T08:20:02.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://dentino.iran.liara.run/gallery</loc><lastmod>2023-04-23T08:20:02.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://dentino.iran.liara.run/posts</loc><lastmod>2023-04-23T08:20:02.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://dentino.iran.liara.run/سوالات-متداول</loc><lastmod>2023-04-23T08:20:02.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://dentino.iran.liara.run/تماس-با-ما</loc><lastmod>2023-04-23T08:20:02.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://dentino.iran.liara.run/سرویس-ها</loc><lastmod>2023-04-23T08:20:02.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://dentino.iran.liara.run/جزئیات-سرویس</loc><lastmod>2023-04-23T08:20:02.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://dentino.iran.liara.run/صفحات</loc><lastmod>2023-04-23T08:20:02.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://dentino.iran.liara.run/درباره-ما</loc><lastmod>2023-04-23T08:20:02.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
