@@ -1,5 +1,6 @@
 import { ChevronLeftIcon, HomeIcon } from '@heroicons/react/24/outline';
 import React from 'react'
+import LinkCustom from 'src/subComponents/LinkCustom';
 import { relativeToAbsoluteUrls } from './relativeToAbsoluteUrls';
 
 const Crumb = ({ text, href, last = false }) => {
