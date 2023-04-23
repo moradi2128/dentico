@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { useRouter } from 'next/router';
-import Loading from "../components/Loading/Loading";
+
 
 const TranstionEffect = ({ children }) => {
     const router = useRouter();
@@ -12,9 +12,7 @@ const TranstionEffect = ({ children }) => {
                 initial={{ x: "100%", width: "100%" }}
                 animate={{ x: "0%", width: "0%" }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
-            >
-                <Loading />
-            </motion.div>
+            />
             <motion.div
                 className='fixed top-0 bottom-0 right-full w-screen h-screen z-40 bg-gray-200'
                 initial={{ x: "100%", width: "100%" }}
