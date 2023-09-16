@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## 🎨 Next.js Headless WordPress
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- Headless WordPress, using Decoupled Architecture in Next.js
+- Backend in WordPress using WPGraphQL
+- Front end in Nextjs.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. Home Page, Blog Page, Blog Detail Page, Post Page, Post Detail Page, About Us,...
+2. Post Preview
+3. Post Pagination.
+4. Load More Posts.
+5. SEO Component fetching data Yoast SEO with schema
+6. Apollo Client with GraphQL
+7. Header and Footer in Next.js fetching from WordPress Menu items.
+8. Site title, tagline, copyright text, sourced from WordPress.
+9. Next.js Image component, that has image optimization at request time.
+## A Landing page made with Nextjs
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- tailwindcss
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- daisyui
 
-## Learn More
+- graphql
 
-To learn more about Next.js, take a look at the following resources:
+- apollo/client
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- swiperjs
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+ ##  Getting Started 
 
-## Deploy on Vercel
+1. Clone the repository and `cd` into its root directory
+2. Run `npm install` to install dependencies
+3. Run `npm start` from the project directory to run in development mode
+## Environment Variables
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To run this project, you will need to add the following environment variables to your .env.local file
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+`WP_GRAPHQL_URL` = http://localhost:10005/graphql
+
+`WP_IMAGES_URL`  = localhost
+
+`NEXT_PUBLIC_WP_URL` = http://localhost:10005
+
